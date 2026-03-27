@@ -1,6 +1,6 @@
-# Angular Product Dashboard (Simple)
+# Angular Product Dashboard
 
-A basic Angular 17 product dashboard app (non-AI text):
+A basic Angular 17 product dashboard app:
 - Product model: id, name, category, price, stock, status, createdAt
 - Product table with search, filter, sort, pagination
 - Add / edit product dialog component
@@ -13,7 +13,11 @@ A basic Angular 17 product dashboard app (non-AI text):
   ```bash
   npm install
   ```
-- Start development server:
+- Start development server (open browser):
+  ```bash
+  ng serve --open
+  ```
+  or
   ```bash
   npm start
   ```
@@ -25,6 +29,13 @@ A basic Angular 17 product dashboard app (non-AI text):
 ## Output
 
 - Built files placed in: `dist/angular-product-dashboard`
+
+## Images (diagrams)
+
+![Product flow](assets/Architecture_Tutorial-diagram.png)
+![Component structure](assets/Architecture_Tutorial.png)
+
+
 
 ## Main files
 
