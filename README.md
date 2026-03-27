@@ -1,27 +1,40 @@
-# AngularProductDashboard
+# Angular Product Dashboard (Simple)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+A basic Angular 17 product dashboard app (non-AI text):
+- Product model: id, name, category, price, stock, status, createdAt
+- Product table with search, filter, sort, pagination
+- Add / edit product dialog component
+- Delete product action
+- Product service with localStorage persistence
 
-## Development server
+## Commands
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Install dependencies:
+  ```bash
+  npm install
+  ```
+- Start development server:
+  ```bash
+  npm start
+  ```
+- Build static assets:
+  ```bash
+  npm run build
+  ```
 
-## Code scaffolding
+## Output
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Built files placed in: `dist/angular-product-dashboard`
 
-## Build
+## Main files
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- `src/app/models/product.model.ts`
+- `src/app/services/product.service.ts`
+- `src/app/components/product-dialog/product-dialog.component.ts`
+- `src/app/app.component.ts`
 
-## Running unit tests
+## Notes
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- This repository uses Angular Material for table, paginator and dialogs.
+- To regenerate assets for deployment: run `npm run build`.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
