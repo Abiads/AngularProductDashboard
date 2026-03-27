@@ -1,0 +1,574 @@
+/* ========================================
+   PRODUCT MANAGEMENT DASHBOARD - COMPONENT STYLES
+   ======================================== */
+
+/* ========================================
+   FILTER PANEL STYLES
+   ======================================== */
+
+.filter-section {
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  padding: 24px;
+  margin-bottom: 24px;
+  transition: box-shadow 0.3s ease;
+}
+
+.filter-section:hover {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.filter-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Floating Action Button (Global Position) */
+.fab-global {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  width: 56px !important;
+  height: 56px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.fab-global:hover {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) !important;
+  transform: scale(1.08);
+}
+
+.fab-global:active {
+  transform: scale(0.95);
+}
+
+.fab-global:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.filter-container {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.search-box {
+  flex: 2;
+  min-width: 250px;
+  min-height: 56px;
+}
+
+.filter-dropdown {
+  flex: 1;
+  min-width: 160px;
+  min-height: 56px;
+}
+
+.reset-button {
+  height: 56px;
+  padding: 0 16px;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-size: 0.9375rem;
+}
+
+.reset-button:hover {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+  transform: translateY(-2px);
+}
+
+.reset-button mat-icon {
+  margin-right: 6px;
+}
+
+/* ========================================
+   TABLE STYLES
+   ======================================== */
+
+.mat-mdc-table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.mat-mdc-table:hover {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Header Cell Styling */
+.mat-mdc-header-cell {
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  color: #1f2937;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #e5e7eb;
+  padding: 16px 12px !important;
+  transition: background-color 0.3s ease;
+}
+
+.mat-mdc-header-cell:hover {
+  background-color: #f0f1f3;
+}
+
+/* Cell Styling */
+.mat-mdc-cell {
+  border-bottom: 1px solid #f3f4f6;
+  padding: 12px !important;
+  font-size: 0.9375rem;
+  color: #374151;
+  vertical-align: middle;
+}
+
+/* Row Styling */
+.mat-mdc-row {
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  margin: 0 8px;
+}
+
+.mat-mdc-row:hover {
+  background-color: #f9fafb;
+  box-shadow: inset 0 0 0 1px #e5e7eb;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  color: #111827;
+  font-weight: 500;
+}
+
+/* Paginator Styling */
+.mat-mdc-paginator {
+  border-top: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  padding: 12px 16px;
+}
+
+.mat-mdc-paginator-container {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ========================================
+   STATUS BADGES
+   ======================================== */
+
+.status-in-stock,
+.status-out-of-stock {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.status-in-stock {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.status-in-stock:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(22, 101, 52, 0.15);
+}
+
+.status-out-of-stock {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.status-out-of-stock:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(153, 27, 27, 0.15);
+}
+
+/* ========================================
+   FORM FIELD STYLES
+   ======================================== */
+
+.mat-mdc-form-field {
+  width: 100%;
+  display: block;
+}
+
+.mat-mdc-form-field .mdc-text-field--outlined {
+  border-radius: 6px;
+}
+
+.mat-mdc-form-field .mat-mdc-form-field-label {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.mat-mdc-form-field.mat-focused .mat-mdc-form-field-label {
+  color: #3b82f6;
+}
+
+/* ========================================
+   BUTTON STYLES
+   ======================================== */
+
+/* FAB (Floating Action Button) */
+.mat-mdc-fab {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+}
+
+.mat-mdc-fab:hover {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  transform: scale(1.1);
+}
+
+.mat-mdc-fab:active {
+  transform: scale(0.95);
+}
+
+/* Icon Button */
+.mat-mdc-icon-button {
+  transition: all 0.2s ease;
+}
+
+.mat-mdc-icon-button:hover {
+  transform: scale(1.1);
+}
+
+.mat-mdc-icon-button:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Raised Button */
+.mat-mdc-raised-button {
+  transition: all 0.2s ease;
+  font-weight: 600;
+  height: 44px;
+  padding: 0 16px;
+}
+
+.mat-mdc-raised-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Stroked Button */
+.mat-mdc-stroked-button {
+  transition: all 0.2s ease;
+  height: 44px;
+  padding: 0 16px;
+}
+
+.mat-mdc-stroked-button:hover {
+  background-color: #f9fafb;
+}
+
+/* ========================================
+   DIALOG STYLES
+   ======================================== */
+
+.mat-mdc-dialog-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mat-mdc-dialog-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.5px;
+}
+
+.mat-mdc-dialog-content {
+  padding: 24px;
+  color: #374151;
+}
+
+.mat-mdc-dialog-actions {
+  padding: 16px 24px;
+  background-color: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   SELECT DROPDOWN STYLES
+   ======================================== */
+
+.mat-mdc-select .mat-mdc-select-trigger {
+  display: flex;
+  align-items: center;
+}
+
+.mat-mdc-select-panel {
+  border-radius: 8px !important;
+  box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1) !important;
+}
+
+.mat-mdc-option {
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.mat-mdc-option:hover {
+  background-color: #f3f4f6 !important;
+}
+
+.mat-mdc-option:focus {
+  background-color: #e5e7eb !important;
+}
+
+/* ========================================
+   SNACKBAR STYLES
+   ======================================== */
+
+.mdc-snackbar {
+  border-radius: 8px;
+  box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1);
+}
+
+.mdc-snackbar__surface {
+  background-color: #1f2937;
+  color: #ffffff;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .mat-mdc-table {
+    font-size: 0.875rem;
+  }
+
+  .mat-mdc-cell,
+  .mat-mdc-header-cell {
+    padding: 10px 8px !important;
+  }
+
+  .filter-container {
+    gap: 12px;
+  }
+
+  .search-box {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .filter-dropdown {
+    flex: 1;
+    min-width: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mat-mdc-table {
+    font-size: 0.8125rem;
+  }
+
+  .mat-mdc-cell {
+    padding: 8px 6px !important;
+  }
+
+  .mat-mdc-header-cell {
+    padding: 12px 6px !important;
+    font-size: 0.7rem;
+  }
+
+  .mat-mdc-paginator-container {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .filter-section {
+    padding: 16px;
+    margin-bottom: 20px;
+    margin-bottom: 84px;
+  }
+
+  .filter-header {
+    margin-bottom: 16px;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search-box,
+  .filter-dropdown,
+  .reset-button {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .fab-global {
+    width: 48px !important;
+    height: 48px !important;
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mat-mdc-cell,
+  .mat-mdc-header-cell {
+    padding: 6px 4px !important;
+  }
+
+  .mat-mdc-table {
+    font-size: 0.75rem;
+  }
+
+  .filter-section {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 80px;
+  }
+
+  .filter-title {
+    font-size: 1rem;
+  }
+
+  .reset-button span {
+    display: none;
+  }
+
+  .reset-button mat-icon {
+    margin-right: 0;
+  }
+
+  .fab-global {
+    width: 44px !important;
+    height: 44px !important;
+    bottom: 12px;
+    right: 12px;
+  }
+}
+
+/* ========================================
+   FOCUS & ACCESSIBILITY
+   ======================================== */
+
+.mat-mdc-button:focus-visible,
+.mat-mdc-icon-button:focus-visible,
+.mat-mdc-fab:focus-visible,
+.mat-mdc-raised-button:focus-visible,
+.mat-mdc-stroked-button:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.mat-mdc-form-field:focus-within .mdc-notched-outline__leading,
+.mat-mdc-form-field:focus-within .mdc-notched-outline__notch,
+.mat-mdc-form-field:focus-within .mdc-notched-outline__trailing {
+  border-color: #3b82f6 !important;
+}
+
+/* Material Form Field Height Consistency */
+.mat-mdc-form-field-wrapper {
+  padding-bottom: 0.5rem;
+}
+
+.mat-mdc-text-field-wrapper {
+  padding-bottom: 0.5rem;
+}
+
+.mdc-text-field {
+  height: 56px;
+}
+
+input.mat-mdc-input-element,
+select.mat-mdc-select-element {
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 6px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  .mat-mdc-cell {
+    border-bottom: 1px solid #d1d5db;
+  }
+
+  .mat-mdc-header-cell {
+    border-bottom: 2px solid #9ca3af;
+  }
+
+  .mat-mdc-row:hover {
+    background-color: #eff6ff;
+    border: 1px solid #3b82f6;
+  }
+
+  .filter-section {
+    border-color: #6b7280;
+  }
+
+  .filter-title {
+    color: #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .mat-mdc-table,
+  .mat-mdc-fab,
+  .mat-mdc-button,
+  .mat-mdc-icon-button,
+  .mat-mdc-row,
+  .mat-mdc-dialog-container,
+  .status-in-stock,
+  .status-out-of-stock {
+    transition: none !important;
+    animation: none !important;
+  }
+}

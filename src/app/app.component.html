@@ -1,0 +1,133 @@
+<div class="container mx-auto p-4 max-w-7xl fade-in">
+  <header class="mb-8">
+    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Product Management Dashboard</h1>
+    <p class="text-gray-500 text-sm md:text-base">Manage your product inventory with ease and efficiency</p>
+  </header>
+
+  <!-- Search and Filters -->
+  <section class="filter-section slide-in">
+    <div class="filter-header">
+      <h2 class="filter-title">Search & Filters</h2>
+    </div>
+
+    <form [formGroup]="filterForm" class="filter-container">
+      <!-- Search Field -->
+      <mat-form-field appearance="outline" class="search-box">
+        <mat-label>Search Products</mat-label>
+        <input matInput formControlName="search" placeholder="Search by name or category..." aria-label="Search products">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+
+      <!-- Status Dropdown -->
+      <mat-form-field appearance="outline" class="filter-dropdown">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status" aria-label="Filter by status">
+          <mat-option value="">All Statuses</mat-option>
+          @for (status of statuses(); track status) {
+            <mat-option [value]="status">{{ status }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Category Dropdown -->
+      <mat-form-field appearance="outline" class="filter-dropdown">
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category" aria-label="Filter by category">
+          <mat-option value="">All Categories</mat-option>
+          @for (category of categories(); track category) {
+            <mat-option [value]="category">{{ category }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Reset Button -->
+      <button type="button" mat-stroked-button (click)="clearFilters()" aria-label="Clear all filters" class="reset-button">
+        <mat-icon>refresh</mat-icon>
+        <span>Reset</span>
+      </button>
+    </form>
+  </section>
+
+  <!-- Floating Action Button (Global) -->
+  <button mat-fab color="primary" (click)="openAddDialog()" aria-label="Add new product" class="fab-global">
+    <mat-icon>add</mat-icon>
+  </button>
+
+  <!-- Products Table -->
+  <section class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden slide-in">
+    <div class="p-4 md:p-6 border-b border-gray-200 bg-gradient-to-r from-gray-50 to-white">
+      <h2 class="text-lg font-semibold text-gray-900">Products <span class="text-blue-600 font-bold">({{ dataSource.data.length }})</span></h2>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table mat-table [dataSource]="dataSource" matSort class="w-full min-w-full" aria-label="Products table">
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="font-semibold">#</th>
+          <td mat-cell *matCellDef="let product; let i = index" class="px-4 py-3">{{ i + 1 }}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="font-semibold">Name</th>
+          <td mat-cell *matCellDef="let product" class="px-4 py-3 font-medium">{{ product.name }}</td>
+        </ng-container>
+
+        <!-- Category Column -->
+        <ng-container matColumnDef="category">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="font-semibold">Category</th>
+          <td mat-cell *matCellDef="let product" class="px-4 py-3">{{ product.category }}</td>
+        </ng-container>
+
+        <!-- Price Column -->
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="font-semibold">Price</th>
+          <td mat-cell *matCellDef="let product" class="px-4 py-3">${{ product.price.toFixed(2) }}</td>
+        </ng-container>
+
+        <!-- Stock Column -->
+        <ng-container matColumnDef="stock">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="font-semibold">Stock</th>
+          <td mat-cell *matCellDef="let product" class="px-4 py-3">{{ product.stock }}</td>
+        </ng-container>
+
+        <!-- Status Column -->
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="font-semibold">Status</th>
+          <td mat-cell *matCellDef="let product" class="px-4 py-3">
+            <span [class]="getStatusClass(product.status) + ' px-2 py-1 rounded-full text-xs font-medium'">
+              {{ product.status }}
+            </span>
+          </td>
+        </ng-container>
+
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef class="font-semibold">Actions</th>
+          <td mat-cell *matCellDef="let product" class="px-4 py-3">
+            <div class="flex gap-2">
+              <button mat-icon-button color="primary" (click)="openEditDialog(product)"
+                      [attr.aria-label]="'Edit ' + product.name">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="deleteProduct(product)"
+                      [attr.aria-label]="'Delete ' + product.name">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns" class="bg-gray-50"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="hover:bg-gray-50"></tr>
+      </table>
+    </div>
+
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 20, 50]"
+      showFirstLastButtons
+      aria-label="Select page of products">
+    </mat-paginator>
+  </section>
+</div>
