@@ -32,8 +32,13 @@ A basic Angular 17 product dashboard app:
 
 ## Images (diagrams)
 
-![Product flow](assets/Architecture_Tutorial-diagram.png)
-![Component structure](assets/Architecture_Tutorial.png)
+- Local project assets:
+  - `![Product flow](assets/Architecture_Tutorial-diagram.png)`
+  - `![Component structure](assets/Architecture_Tutorial.png)`
+
+- GitHub raw URLs:
+  - `![Product flow](https://raw.githubusercontent.com/Abiads/AngularProductDashboard/9fdb6430e33350e5239efe87c074e473986983d4/src/assets/Architecture_Tutorial-diagram.png)`
+  - `![Component structure](https://raw.githubusercontent.com/Abiads/AngularProductDashboard/9fdb6430e33350e5239efe87c074e473986983d4/src/assets/Architecture_Tutorial.png)`
 
 
 
